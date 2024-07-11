@@ -1,22 +1,13 @@
-import React from "react";
-import Navbar from "./components/Navbar";
-import Cart from "./components/Cart"
-import Products from "./components/Products";
-import Wishlist from "./components/Wishlist";
-import Footer from "./components/Footer";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from "react-redux";
+import store from './store'
+import App from './App'
+import './index.css'
 
-function App() {
-  return (
-    <>
-      <Navbar/>
-      <div className="container">
-        <Products />
-        <Wishlist />
-        <Cart />
-      </div>
-      <Footer />
-    </>
-  );
-}
-
-export default App;
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+);
